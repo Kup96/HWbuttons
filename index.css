@@ -1,0 +1,59 @@
+.menuContainer * {
+    box-sizing: border-box;
+}        
+.menuContainer {
+    margin: 0;
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+}
+.menu {
+    margin: 0;
+    display: flex;
+    width: 900px;
+    height: 150px;
+    border-radius: 7%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(36, 31, 31, 0.829);
+}
+.menuChild {
+    all: unset;
+    cursor: pointer;
+    flex-grow: 1;
+    z-index: 2;
+    display: flex;
+    position: relative;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: space-around;
+    transition: transform 2s; 
+}
+.menuChild::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: background-color .7s, transform .7s;  
+}
+
+.menuChild.active {
+    border: 12px rgba(36, 31, 31, 0.829);
+    transition: outline 0.2s linear;
+}
+.menuChild.active::before { 
+    background-color: var(--fillcolor);
+    border-top-width: 120px;
+}
+
+.icon { 
+    width: 80px;
+    height: 65px;
+    stroke: white;
+    fill: transparent;
+}
+
